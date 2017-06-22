@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A4BC6311EFB5FBE0019DE8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6301EFB5FBE0019DE8F /* main.m */; };
+		2A4BC6341EFB5FBE0019DE8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6331EFB5FBE0019DE8F /* AppDelegate.m */; };
+		2A4BC6371EFB5FBE0019DE8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6361EFB5FBE0019DE8F /* ViewController.m */; };
+		2A4BC63A1EFB5FBE0019DE8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A4BC6381EFB5FBE0019DE8F /* Main.storyboard */; };
+		2A4BC63C1EFB5FBE0019DE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A4BC63B1EFB5FBE0019DE8F /* Assets.xcassets */; };
+		2A4BC63F1EFB5FBE0019DE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A4BC63D1EFB5FBE0019DE8F /* LaunchScreen.storyboard */; };
+		2A4BC64A1EFB5FBE0019DE8F /* WellRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6491EFB5FBE0019DE8F /* WellRefreshTests.m */; };
+		2A4BC6551EFB5FBE0019DE8F /* WellRefreshUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6541EFB5FBE0019DE8F /* WellRefreshUITests.m */; };
+		2A4BC6651EFB5FF10019DE8F /* WellHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6641EFB5FF10019DE8F /* WellHeaderView.m */; };
+		2A4BC66B1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC66A1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A4BC6461EFB5FBE0019DE8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A4BC6241EFB5FBE0019DE8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A4BC62B1EFB5FBE0019DE8F;
+			remoteInfo = WellRefresh;
+		};
+		2A4BC6511EFB5FBE0019DE8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A4BC6241EFB5FBE0019DE8F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A4BC62B1EFB5FBE0019DE8F;
+			remoteInfo = WellRefresh;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A4BC62C1EFB5FBE0019DE8F /* WellRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WellRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A4BC6301EFB5FBE0019DE8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A4BC6321EFB5FBE0019DE8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2A4BC6331EFB5FBE0019DE8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2A4BC6351EFB5FBE0019DE8F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2A4BC6361EFB5FBE0019DE8F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2A4BC6391EFB5FBE0019DE8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A4BC63B1EFB5FBE0019DE8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A4BC63E1EFB5FBE0019DE8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A4BC6401EFB5FBE0019DE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A4BC6451EFB5FBE0019DE8F /* WellRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WellRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A4BC6491EFB5FBE0019DE8F /* WellRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WellRefreshTests.m; sourceTree = "<group>"; };
+		2A4BC64B1EFB5FBE0019DE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A4BC6501EFB5FBE0019DE8F /* WellRefreshUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WellRefreshUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A4BC6541EFB5FBE0019DE8F /* WellRefreshUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WellRefreshUITests.m; sourceTree = "<group>"; };
+		2A4BC6561EFB5FBE0019DE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A4BC6631EFB5FF10019DE8F /* WellHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WellHeaderView.h; path = Refresh/WellHeaderView.h; sourceTree = "<group>"; };
+		2A4BC6641EFB5FF10019DE8F /* WellHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WellHeaderView.m; path = Refresh/WellHeaderView.m; sourceTree = "<group>"; };
+		2A4BC6691EFB8FFF0019DE8F /* UIScrollView+WellRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+WellRefresh.h"; path = "Refresh/UIScrollView+WellRefresh.h"; sourceTree = "<group>"; };
+		2A4BC66A1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+WellRefresh.m"; path = "Refresh/UIScrollView+WellRefresh.m"; sourceTree = "<group>"; };
+		2A4BC66D1EFB9A4A0019DE8F /* WellRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WellRefresh.h; path = Refresh/WellRefresh.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A4BC6291EFB5FBE0019DE8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A4BC6421EFB5FBE0019DE8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A4BC64D1EFB5FBE0019DE8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A4BC6231EFB5FBE0019DE8F = {
+			isa = PBXGroup;
+			children = (
+				2A4BC62E1EFB5FBE0019DE8F /* WellRefresh */,
+				2A4BC6481EFB5FBE0019DE8F /* WellRefreshTests */,
+				2A4BC6531EFB5FBE0019DE8F /* WellRefreshUITests */,
+				2A4BC62D1EFB5FBE0019DE8F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A4BC62D1EFB5FBE0019DE8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A4BC62C1EFB5FBE0019DE8F /* WellRefresh.app */,
+				2A4BC6451EFB5FBE0019DE8F /* WellRefreshTests.xctest */,
+				2A4BC6501EFB5FBE0019DE8F /* WellRefreshUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A4BC62E1EFB5FBE0019DE8F /* WellRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				2A4BC6621EFB5FC40019DE8F /* Refresh */,
+				2A4BC6321EFB5FBE0019DE8F /* AppDelegate.h */,
+				2A4BC6331EFB5FBE0019DE8F /* AppDelegate.m */,
+				2A4BC6351EFB5FBE0019DE8F /* ViewController.h */,
+				2A4BC6361EFB5FBE0019DE8F /* ViewController.m */,
+				2A4BC6381EFB5FBE0019DE8F /* Main.storyboard */,
+				2A4BC63B1EFB5FBE0019DE8F /* Assets.xcassets */,
+				2A4BC63D1EFB5FBE0019DE8F /* LaunchScreen.storyboard */,
+				2A4BC6401EFB5FBE0019DE8F /* Info.plist */,
+				2A4BC62F1EFB5FBE0019DE8F /* Supporting Files */,
+			);
+			path = WellRefresh;
+			sourceTree = "<group>";
+		};
+		2A4BC62F1EFB5FBE0019DE8F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A4BC6301EFB5FBE0019DE8F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A4BC6481EFB5FBE0019DE8F /* WellRefreshTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A4BC6491EFB5FBE0019DE8F /* WellRefreshTests.m */,
+				2A4BC64B1EFB5FBE0019DE8F /* Info.plist */,
+			);
+			path = WellRefreshTests;
+			sourceTree = "<group>";
+		};
+		2A4BC6531EFB5FBE0019DE8F /* WellRefreshUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A4BC6541EFB5FBE0019DE8F /* WellRefreshUITests.m */,
+				2A4BC6561EFB5FBE0019DE8F /* Info.plist */,
+			);
+			path = WellRefreshUITests;
+			sourceTree = "<group>";
+		};
+		2A4BC6621EFB5FC40019DE8F /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				2A4BC66D1EFB9A4A0019DE8F /* WellRefresh.h */,
+				2A4BC6631EFB5FF10019DE8F /* WellHeaderView.h */,
+				2A4BC6641EFB5FF10019DE8F /* WellHeaderView.m */,
+				2A4BC6691EFB8FFF0019DE8F /* UIScrollView+WellRefresh.h */,
+				2A4BC66A1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m */,
+			);
+			name = Refresh;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A4BC62B1EFB5FBE0019DE8F /* WellRefresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A4BC6591EFB5FBE0019DE8F /* Build configuration list for PBXNativeTarget "WellRefresh" */;
+			buildPhases = (
+				2A4BC6281EFB5FBE0019DE8F /* Sources */,
+				2A4BC6291EFB5FBE0019DE8F /* Frameworks */,
+				2A4BC62A1EFB5FBE0019DE8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WellRefresh;
+			productName = WellRefresh;
+			productReference = 2A4BC62C1EFB5FBE0019DE8F /* WellRefresh.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A4BC6441EFB5FBE0019DE8F /* WellRefreshTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A4BC65C1EFB5FBE0019DE8F /* Build configuration list for PBXNativeTarget "WellRefreshTests" */;
+			buildPhases = (
+				2A4BC6411EFB5FBE0019DE8F /* Sources */,
+				2A4BC6421EFB5FBE0019DE8F /* Frameworks */,
+				2A4BC6431EFB5FBE0019DE8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A4BC6471EFB5FBE0019DE8F /* PBXTargetDependency */,
+			);
+			name = WellRefreshTests;
+			productName = WellRefreshTests;
+			productReference = 2A4BC6451EFB5FBE0019DE8F /* WellRefreshTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A4BC64F1EFB5FBE0019DE8F /* WellRefreshUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A4BC65F1EFB5FBE0019DE8F /* Build configuration list for PBXNativeTarget "WellRefreshUITests" */;
+			buildPhases = (
+				2A4BC64C1EFB5FBE0019DE8F /* Sources */,
+				2A4BC64D1EFB5FBE0019DE8F /* Frameworks */,
+				2A4BC64E1EFB5FBE0019DE8F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A4BC6521EFB5FBE0019DE8F /* PBXTargetDependency */,
+			);
+			name = WellRefreshUITests;
+			productName = WellRefreshUITests;
+			productReference = 2A4BC6501EFB5FBE0019DE8F /* WellRefreshUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A4BC6241EFB5FBE0019DE8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = well;
+				TargetAttributes = {
+					2A4BC62B1EFB5FBE0019DE8F = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
+					2A4BC6441EFB5FBE0019DE8F = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A4BC62B1EFB5FBE0019DE8F;
+					};
+					2A4BC64F1EFB5FBE0019DE8F = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A4BC62B1EFB5FBE0019DE8F;
+					};
+				};
+			};
+			buildConfigurationList = 2A4BC6271EFB5FBE0019DE8F /* Build configuration list for PBXProject "WellRefresh" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A4BC6231EFB5FBE0019DE8F;
+			productRefGroup = 2A4BC62D1EFB5FBE0019DE8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A4BC62B1EFB5FBE0019DE8F /* WellRefresh */,
+				2A4BC6441EFB5FBE0019DE8F /* WellRefreshTests */,
+				2A4BC64F1EFB5FBE0019DE8F /* WellRefreshUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A4BC62A1EFB5FBE0019DE8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A4BC63F1EFB5FBE0019DE8F /* LaunchScreen.storyboard in Resources */,
+				2A4BC63C1EFB5FBE0019DE8F /* Assets.xcassets in Resources */,
+				2A4BC63A1EFB5FBE0019DE8F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A4BC6431EFB5FBE0019DE8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A4BC64E1EFB5FBE0019DE8F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A4BC6281EFB5FBE0019DE8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A4BC6371EFB5FBE0019DE8F /* ViewController.m in Sources */,
+				2A4BC6341EFB5FBE0019DE8F /* AppDelegate.m in Sources */,
+				2A4BC6311EFB5FBE0019DE8F /* main.m in Sources */,
+				2A4BC66B1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m in Sources */,
+				2A4BC6651EFB5FF10019DE8F /* WellHeaderView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A4BC6411EFB5FBE0019DE8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A4BC64A1EFB5FBE0019DE8F /* WellRefreshTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A4BC64C1EFB5FBE0019DE8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A4BC6551EFB5FBE0019DE8F /* WellRefreshUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A4BC6471EFB5FBE0019DE8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A4BC62B1EFB5FBE0019DE8F /* WellRefresh */;
+			targetProxy = 2A4BC6461EFB5FBE0019DE8F /* PBXContainerItemProxy */;
+		};
+		2A4BC6521EFB5FBE0019DE8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A4BC62B1EFB5FBE0019DE8F /* WellRefresh */;
+			targetProxy = 2A4BC6511EFB5FBE0019DE8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A4BC6381EFB5FBE0019DE8F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A4BC6391EFB5FBE0019DE8F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2A4BC63D1EFB5FBE0019DE8F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A4BC63E1EFB5FBE0019DE8F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A4BC6571EFB5FBE0019DE8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2A4BC6581EFB5FBE0019DE8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A4BC65A1EFB5FBE0019DE8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WellRefresh/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = well.WellRefresh;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2A4BC65B1EFB5FBE0019DE8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WellRefresh/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = well.WellRefresh;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2A4BC65D1EFB5FBE0019DE8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WellRefreshTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = well.WellRefreshTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WellRefresh.app/WellRefresh";
+			};
+			name = Debug;
+		};
+		2A4BC65E1EFB5FBE0019DE8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WellRefreshTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = well.WellRefreshTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WellRefresh.app/WellRefresh";
+			};
+			name = Release;
+		};
+		2A4BC6601EFB5FBE0019DE8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WellRefreshUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = well.WellRefreshUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WellRefresh;
+			};
+			name = Debug;
+		};
+		2A4BC6611EFB5FBE0019DE8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WellRefreshUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = well.WellRefreshUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WellRefresh;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A4BC6271EFB5FBE0019DE8F /* Build configuration list for PBXProject "WellRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A4BC6571EFB5FBE0019DE8F /* Debug */,
+				2A4BC6581EFB5FBE0019DE8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A4BC6591EFB5FBE0019DE8F /* Build configuration list for PBXNativeTarget "WellRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A4BC65A1EFB5FBE0019DE8F /* Debug */,
+				2A4BC65B1EFB5FBE0019DE8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A4BC65C1EFB5FBE0019DE8F /* Build configuration list for PBXNativeTarget "WellRefreshTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A4BC65D1EFB5FBE0019DE8F /* Debug */,
+				2A4BC65E1EFB5FBE0019DE8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A4BC65F1EFB5FBE0019DE8F /* Build configuration list for PBXNativeTarget "WellRefreshUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A4BC6601EFB5FBE0019DE8F /* Debug */,
+				2A4BC6611EFB5FBE0019DE8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A4BC6241EFB5FBE0019DE8F /* Project object */;
+}
