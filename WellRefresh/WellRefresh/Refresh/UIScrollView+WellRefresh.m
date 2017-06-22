@@ -12,11 +12,14 @@
 
 #import "UIScrollView+WellRefresh.h"
 #import "WellHeaderView.h"
+#import "WellFooterView.h"
 #import <objc/message.h>
 
 @interface UIScrollView()
 
 @property(nonatomic,strong)WellHeaderView *wellHeaderView;
+
+@property(nonatomic,strong)WellFooterView *wellFooterView;
 
 @end
 
@@ -44,6 +47,29 @@
     }];
 }
 
+
+//上拉加载
+-(void)welladdFooterLoadWithBlock:(WellFooterLoadBlock)block
+{
+    self.wellFooterLoadBlock = block;
+    if (!self.wellFooterView) {
+        self.wellFooterView = [[WellFooterView alloc] initWithFrame:CGRectMake(0, self.frame.size.height, self.frame.size.width, 50)];
+    }
+    [self addSubview:self.wellFooterView];
+    
+    [self addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"wellRefreshStatus" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(void)endFooterLoad
+{
+    [self getRefreshStatus:WellRefreshStatusCancelLoad];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    }];
+}
+
 // 设置刷新状态
 - (void)getRefreshStatus:(WellRefreshStatus)status
 {
@@ -59,6 +85,18 @@
         case WellRefreshStatusCancelRefresh:
             self.wellRefreshStatus = @"WellRefreshStatusCancelRefresh";
             self.wellHeaderView.refreshStatus = WellRefreshCancelRefresh;
+            break;
+        case WellRefreshStatusWillLoad:
+            self.wellRefreshStatus = @"WellRefreshStatusWillLoad";
+            self.wellFooterView.loadStatus = WellLoadWillLoad;
+            break;
+        case WellRefreshStatusLoading:
+            self.wellRefreshStatus = @"WellRefreshStatusLoading";
+            self.wellFooterView.loadStatus = WellLoading;
+            break;
+        case WellRefreshStatusCancelLoad:
+            self.wellRefreshStatus = @"WellRefreshStatusCancelLoad";
+            self.wellFooterView.loadStatus = WellLoadCancelLoad;
             break;
             
         default:
@@ -82,12 +120,38 @@
                         [self getRefreshStatus:WellRefreshStatusCancelRefresh];
                     }
                 }
+            }else//上拉加载
+            {
+                if (![self.wellRefreshStatus isEqualToString:@"WellRefreshStatusLoading"]) {
+                    
+                    CGFloat offsetY = self.contentOffset.y;
+                    CGFloat frameY = self.frame.size.height;
+                    CGFloat contentY = self.contentSize.height;
+                    float bottomY = offsetY + frameY - contentY;//这个值是否是拉倒最下面了
+                    if (frameY > contentY) {
+                        bottomY = offsetY;
+                    }
+                    
+                    if (bottomY > 50) {
+                        [self getRefreshStatus:WellRefreshStatusWillLoad];
+                    }else
+                    {
+                        [self getRefreshStatus:WellRefreshStatusCancelLoad];
+                    }
+                    
+                }
             }
         }else if ([self.wellRefreshStatus isEqualToString:@"WellRefreshStatusWillRefresh"])//下拉刷新
         {
             [self getRefreshStatus:WellRefreshStatusRefreshing];
             self.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
             self.wellHeaderRefreshBlock();
+        }else if ([self.wellRefreshStatus isEqualToString:@"WellRefreshStatusWillLoad"])//上拉加载
+        {
+            [self getRefreshStatus:WellRefreshStatusLoading];
+            self.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
+            self.wellFooterLoadBlock();
+            
         }
     }
     
@@ -97,18 +161,38 @@
                 [self getRefreshStatus:WellRefreshStatusRefreshing];
                 self.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);
                 self.wellHeaderRefreshBlock();
+            }else if ([self.wellRefreshStatus isEqualToString:@"WellRefreshStatusWillLoad"])
+            {
+                [self getRefreshStatus:WellRefreshStatusLoading];
+                self.contentInset = UIEdgeInsetsMake(0, 0, 50, 0);
+                self.wellFooterLoadBlock();
             }
+        }
+    }
+    
+    if ([keyPath isEqualToString:@"contentSize"]) {
+        if (self.wellFooterView) {
+            CGSize contentSize = self.contentSize;
+            CGFloat contentY = contentSize.height;
+            CGFloat frameY = self.frame.size.height;
+            float BottomY = contentY;
+            if (frameY >= contentY) {
+                BottomY = frameY;
+            }
+            self.wellFooterView.frame = CGRectMake(0, BottomY, self.frame.size.width, 50);
         }
     }
 }
 
 - (void)dealloc{
     [self removeObserver:self forKeyPath:@"contentOffset"];
-    [self removeObserver:self forKeyPath:@"RefreshStatu"];
+    [self removeObserver:self forKeyPath:@"wellRefreshStatus"];
+    [self removeObserver:self forKeyPath:@"contentSize"];
 }
 
 #pragma mark 动态添加属性
 // 利用runtime来添加视图属性
+//wellHeaderView
 -(void)setWellHeaderView:(WellHeaderView *)wellHeaderView
 {
     objc_setAssociatedObject(self, @selector(wellHeaderView), wellHeaderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -119,6 +203,7 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
+//wellHeaderRefreshBlock
 -(void)setWellHeaderRefreshBlock:(WellHeaderRefreshBlock)wellHeaderRefreshBlock
 {
     objc_setAssociatedObject(self, @selector(wellHeaderRefreshBlock), wellHeaderRefreshBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
@@ -129,12 +214,36 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
+//wellRefreshStatus
 -(void)setWellRefreshStatus:(NSString *)wellRefreshStatus
 {
     objc_setAssociatedObject(self, @selector(wellRefreshStatus), wellRefreshStatus, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 -(NSString *)wellRefreshStatus
+{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+//wellFooterView
+-(void)setWellFooterView:(WellFooterView *)wellFooterView
+{
+    objc_setAssociatedObject(self, @selector(wellFooterView), wellFooterView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+
+-(WellFooterView *)wellFooterView
+{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+//wellFooterLoadBlock
+-(void)setWellFooterLoadBlock:(WellFooterLoadBlock)wellFooterLoadBlock
+{
+    objc_setAssociatedObject(self, @selector(wellFooterLoadBlock), wellFooterLoadBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(WellFooterLoadBlock)wellFooterLoadBlock
 {
     return objc_getAssociatedObject(self, _cmd);
 }

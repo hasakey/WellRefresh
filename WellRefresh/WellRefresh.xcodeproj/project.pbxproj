@@ -17,6 +17,7 @@
 		2A4BC6551EFB5FBE0019DE8F /* WellRefreshUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6541EFB5FBE0019DE8F /* WellRefreshUITests.m */; };
 		2A4BC6651EFB5FF10019DE8F /* WellHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC6641EFB5FF10019DE8F /* WellHeaderView.m */; };
 		2A4BC66B1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC66A1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m */; };
+		2A4BC6701EFBA8970019DE8F /* WellFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4BC66F1EFBA8970019DE8F /* WellFooterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		2A4BC6691EFB8FFF0019DE8F /* UIScrollView+WellRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+WellRefresh.h"; path = "Refresh/UIScrollView+WellRefresh.h"; sourceTree = "<group>"; };
 		2A4BC66A1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+WellRefresh.m"; path = "Refresh/UIScrollView+WellRefresh.m"; sourceTree = "<group>"; };
 		2A4BC66D1EFB9A4A0019DE8F /* WellRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WellRefresh.h; path = Refresh/WellRefresh.h; sourceTree = "<group>"; };
+		2A4BC66E1EFBA8970019DE8F /* WellFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WellFooterView.h; path = Refresh/WellFooterView.h; sourceTree = "<group>"; };
+		2A4BC66F1EFBA8970019DE8F /* WellFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WellFooterView.m; path = Refresh/WellFooterView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				2A4BC66D1EFB9A4A0019DE8F /* WellRefresh.h */,
+				2A4BC66E1EFBA8970019DE8F /* WellFooterView.h */,
+				2A4BC66F1EFBA8970019DE8F /* WellFooterView.m */,
 				2A4BC6631EFB5FF10019DE8F /* WellHeaderView.h */,
 				2A4BC6641EFB5FF10019DE8F /* WellHeaderView.m */,
 				2A4BC6691EFB8FFF0019DE8F /* UIScrollView+WellRefresh.h */,
@@ -296,6 +301,7 @@
 				2A4BC6371EFB5FBE0019DE8F /* ViewController.m in Sources */,
 				2A4BC6341EFB5FBE0019DE8F /* AppDelegate.m in Sources */,
 				2A4BC6311EFB5FBE0019DE8F /* main.m in Sources */,
+				2A4BC6701EFBA8970019DE8F /* WellFooterView.m in Sources */,
 				2A4BC66B1EFB8FFF0019DE8F /* UIScrollView+WellRefresh.m in Sources */,
 				2A4BC6651EFB5FF10019DE8F /* WellHeaderView.m in Sources */,
 			);

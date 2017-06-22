@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class WellHeaderView;
+@class WellFooterView;
 
 typedef NS_ENUM(NSInteger,WellRefreshStatus) {
     // 刷新状态
@@ -23,15 +24,23 @@ typedef NS_ENUM(NSInteger,WellRefreshStatus) {
 //刷新的回调
 
 typedef void(^WellHeaderRefreshBlock)();
+typedef void(^WellFooterLoadBlock)();
 
 @interface UIScrollView (WellRefresh)
 
 @property(nonatomic,copy) WellHeaderRefreshBlock wellHeaderRefreshBlock;
+@property(nonatomic,copy) WellFooterLoadBlock wellFooterLoadBlock;
 
 @property (nonatomic , copy) NSString *wellRefreshStatus;
 
 // 下拉刷新
 - (void)welladdHeaderRefreshWithBlock:(WellHeaderRefreshBlock)block;
 - (void)endHeaderRefresh;
+
+
+// 上拉刷新
+- (void)welladdFooterLoadWithBlock:(WellFooterLoadBlock)block;
+- (void)endFooterLoad;
+
 
 @end
