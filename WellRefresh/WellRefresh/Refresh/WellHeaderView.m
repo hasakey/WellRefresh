@@ -20,6 +20,8 @@
 @property(nonatomic,strong)UIImageView *imageView;
 /* 转圈圈 **/
 @property(nonatomic,strong)UIActivityIndicatorView *activityIndicatorView;
+/* 转圈圈 **/
+@property(nonatomic,strong)NSArray *gifArray;
 
 @end
 
@@ -41,7 +43,7 @@
 {
     [self addSubview:self.textLabel];
     [self addSubview:self.imageView];
-    [self addSubview:self.activityIndicatorView];
+//    [self addSubview:self.activityIndicatorView];
 
 }
 
@@ -51,24 +53,31 @@
     if ([keyPath isEqualToString:@"refreshStatus"]) {
         if (self.refreshStatus == WellRefreshWillRefresh) {
             self.textLabel.text = WILLREFRESH;
-            self.imageView.hidden = NO;
-            self.activityIndicatorView.hidden = YES;
+//            self.imageView.hidden = NO;
+            [self.imageView stopAnimating];
+//            self.activityIndicatorView.hidden = YES;
             [UIView animateWithDuration:0.3 animations:^{
-                self.imageView.transform = CGAffineTransformMakeRotation(0);
+//                self.imageView.transform = CGAffineTransformMakeRotation(0);
+                self.imageView.image = [UIImage imageNamed:@"pulling"];
             }];
             
         }else if (self.refreshStatus == WellRefreshing)
         {
             self.textLabel.text = REFRESHING;
-            self.imageView.hidden = YES;
-            self.activityIndicatorView.hidden = NO;
+//            self.imageView.hidden = YES;
+//            self.activityIndicatorView.hidden = NO;
+            self.imageView.animationImages = self.gifArray;
+            self.imageView.animationDuration = 0.1 * self.gifArray.count;
+            [self.imageView startAnimating];
         }else if (self.refreshStatus == WellRefreshCancelRefresh)
         {
             self.textLabel.text = CANCELREFRESH;
-            self.imageView.hidden = NO;
-            self.activityIndicatorView.hidden = YES;
+//            self.imageView.hidden = NO;
+            [self.imageView stopAnimating];
+//            self.activityIndicatorView.hidden = YES;
             [UIView animateWithDuration:0.3 animations:^{
-                self.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+//                self.imageView.transform = CGAffineTransformMakeRotation(M_PI);
+                self.imageView.image = [UIImage imageNamed:@"normal"];
             }];
         }
     }
@@ -90,8 +99,8 @@
 {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width / 3 - 30, 10, 30, 30)];
-        _imageView.image = [UIImage imageNamed:@"RefreshArrow"];
-        _imageView.transform = CGAffineTransformMakeRotation(M_PI);
+        _imageView.image = [UIImage imageNamed:@"normal"];
+//        _imageView.transform = CGAffineTransformMakeRotation(M_PI);
         _imageView.hidden = NO;
     }
     return _imageView;
@@ -106,6 +115,21 @@
     }
     return _activityIndicatorView;
 }
+
+-(NSArray *)gifArray
+{
+    if (!_gifArray) {
+        NSMutableArray *arrayM = [NSMutableArray array];
+        for (int i=1; i<4; i++) {
+            NSString *imagesName = [NSString stringWithFormat:@"%d",i];
+            UIImage *image = [UIImage imageNamed:imagesName];
+            [arrayM addObject:image];
+        }
+        _gifArray = arrayM;
+    }
+    return _gifArray;
+}
+
 
 -(void)dealloc
 {
